@@ -63,6 +63,7 @@ public class ToyServiceImpl implements ToyService {
         List<Toy> toyList = getAllToys();
         return toyList.stream().sorted(Comparator.comparing(Toy::getPriceUSD)).collect(Collectors.toList());
     }
+
     @Override
     public List<Toy> getToysSortedByPrice(List<Toy> toyList) throws SQLException, ClassNotFoundException {
         return toyList.stream().sorted(Comparator.comparing(Toy::getPriceUSD)).collect(Collectors.toList());
@@ -73,11 +74,13 @@ public class ToyServiceImpl implements ToyService {
         List<Toy> toyList = getAllToys();
         return toyList.stream().sorted(Comparator.comparing(Toy::getName)).collect(Collectors.toList());
     }
+
     @Override
     public List<Toy> getAllToysSortedByAgeGroup() throws SQLException, ClassNotFoundException {
         List<Toy> toyList = getAllToys();
         return toyList.stream().sorted(Comparator.comparing(Toy::getAgeGroup)).collect(Collectors.toList());
     }
+
     @Override
     public List<Toy> getAllToysSortedByChildMale() throws SQLException, ClassNotFoundException {
         List<Toy> toyList = getAllToys();

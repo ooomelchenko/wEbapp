@@ -23,9 +23,9 @@
         </h1>
     </div>
     <div class="div_lang" style=" width: 30%">
-        <a href="?sessionLocale=en"><img src="icons/gb.png"><fmt:message key="lang.en"/></a>
+        <a href="?command=gameroom&sessionLocale=en"><img src="icons/gb.png"><fmt:message key="lang.en"/></a>
         <br/>
-        <a href="?sessionLocale=ua"><img src="icons/ua.png"><fmt:message key="lang.ua"/></a>
+        <a href="?command=gameroom&sessionLocale=ua"><img src="icons/ua.png"><fmt:message key="lang.ua"/></a>
     </div>
 </header>
 <div id="div_body">

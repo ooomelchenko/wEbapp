@@ -1,8 +1,6 @@
 package gameRoom.command.actions;
 
 import gameRoom.command.ActionCommand;
-import gameRoom.command.ConfigurationManager;
-import gameRoom.command.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,13 +15,13 @@ public class LoginCommand implements ActionCommand {
         String pass = request.getParameter(PARAM_NAME_PASSWORD);
 // проверка логина и пароля
         if (LoginLogic.checkLogin(login, pass)) {
-            request.setAttribute("user", login);
+            request.getSession().setAttribute("user", login);
 // определение пути к main.jsp
-            page = ConfigurationManager.getProperty("path.page.main");
+            page = "/Wellcome.jsp";
         } else {
-            request.setAttribute("errorLoginPassMessage",
-                    MessageManager.getProperty("message.loginerror"));
-            page = ConfigurationManager.getProperty("path.page.login");
+           /* request.setAttribute("errorLoginPassMessage",
+                    MessageManager.getProperty("message.loginerror"));*/
+            page = "/login.jsp";
         }
         return page;
     }

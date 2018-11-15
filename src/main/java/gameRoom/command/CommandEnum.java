@@ -1,11 +1,9 @@
 package gameRoom.command;
 
-import gameRoom.command.actions.FilterToys;
-import gameRoom.command.actions.LoginCommand;
-import gameRoom.command.actions.LogoutCommand;
-import gameRoom.command.actions.SortToysByPrice;
+import gameRoom.command.actions.*;
 
 public enum CommandEnum {
+
     LOGIN {
         {
             this.command = new LoginCommand();
@@ -14,6 +12,16 @@ public enum CommandEnum {
     LOGOUT {
         {
             this.command = new LogoutCommand();
+        }
+    },
+    WELLCOME {
+        {
+            this.command = new WellcomeCommand();
+        }
+    },
+    GAMEROOM {
+        {
+            this.command = new GameRoomCommand();
         }
     },
     SORTBYPRICE {

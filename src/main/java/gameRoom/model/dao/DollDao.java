@@ -5,6 +5,6 @@ import gameRoom.model.entity.Doll;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface DollDao {
+public interface DollDao  { //extends AutoCloseable
     List<Doll> getAll() throws SQLException, ClassNotFoundException;
 }

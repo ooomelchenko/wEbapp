@@ -2,7 +2,6 @@ package gameRoom.servlet;
 
 import gameRoom.command.ActionCommand;
 import gameRoom.command.ActionFactory;
-import gameRoom.command.ConfigurationManager;
 import gameRoom.command.MessageManager;
 
 import javax.servlet.RequestDispatcher;
@@ -27,7 +26,7 @@ public class ServletMain extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-        String page = null;
+        String page ;
 // определение команды, пришедшей из JSP
         ActionFactory client = new ActionFactory();
         ActionCommand command = client.defineCommand(request);
@@ -43,7 +42,7 @@ public class ServletMain extends HttpServlet {
             dispatcher.forward(request, response);
         } else {
 // установка страницы c cообщением об ошибке
-            page = ConfigurationManager.getProperty("index.jsp");
+            page = "Wellcome.jsp";
             request.getSession().setAttribute("nullPage",
                     MessageManager.getProperty("message.nullpage"));
             response.sendRedirect(request.getContextPath() + page);
